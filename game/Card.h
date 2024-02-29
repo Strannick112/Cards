@@ -7,20 +7,20 @@
 #include <stdlib.h>
 
 typedef struct Rang{
-    char symbol;
+    wchar_t symbol;
     int points;
 } Rang;
 
 const Rang rangs[9] = {
-        {'6', 6},
-        {'7', 7},
-        {'8', 8},
-        {'9', 9},
-        {'X', 10},
-        {'J', 1},
-        {'Q', 2},
-        {'K', 3},
-        {'A', 11}
+        {L'6', 6},
+        {L'7', 7},
+        {L'8', 8},
+        {L'9', 9},
+        {L'X', 10},
+        {L'J', 1},
+        {L'Q', 2},
+        {L'K', 3},
+        {L'A', 11}
         };
 
 // В РАЗРАБОТКЕ!!!
@@ -35,6 +35,17 @@ typedef struct Card{
     void (*show)(struct Card* card);
 } Card;
 
-Card* card_init(char mast, Rang rang);
+int get_points(struct Card* card);
+void show(struct Card* card);
 
+Card* card_init(wchar_t mast, Rang rang){
+    Card* result = malloc(sizeof(Card));
+    result->rang = rang;
+    result->mast = mast;
+    result->get_points = get_points;
+    result->show = show;
+    return result;
+}
+
+#include "Card.c"
 #endif //UNTITLED33_CARD_H
