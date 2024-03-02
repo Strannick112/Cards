@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 23)
 
 add_executable(untitled33 main.c
         game/Card.c
-        game/Deck.c)
+        game/Deck.c
+        game/Hand.c
+        game/Player.c)

@@ -6,8 +6,8 @@
 //#include "Card.h"
 #include <stdio.h>
 
-Card* get_card(struct Deck* deck);
-void sort(struct Deck* deck);
+Card* deck_get_card(struct Deck* deck);
+void deck_sort(struct Deck* deck);
 
 Deck* deck_init(){
     Deck* result = malloc(sizeof(Deck));
@@ -19,13 +19,13 @@ Deck* deck_init(){
         }
     }
 
-    result->sort = sort;
-    result->get_card = get_card;
+    result->sort = deck_sort;
+    result->get_card = deck_get_card;
     result->sort(result);
     return result;
 }
 
-Card* get_card(struct Deck* deck){
+Card* deck_get_card(struct Deck* deck){
     if(deck->_index < 36)
         return deck->_deck[deck->_index++];
     else{
@@ -34,7 +34,7 @@ Card* get_card(struct Deck* deck){
     }
 }
 
-void sort(struct Deck* deck){
+void deck_sort(struct Deck* deck){
     for(int i = 0; i < 100; i++){
         int first_rand = rand() % 36;
         int second_rand = rand() % 36;

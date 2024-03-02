@@ -20,23 +20,23 @@ const Rang rangs[9] = {
 // В РАЗРАБОТКЕ!!!
 const char masts[4] = {'\x03', '\x04', '\x05', '\x06'};
 
-int get_points(struct Card* card);
-void show(struct Card* card);
+int card_get_points(struct Card* card);
+void card_show(struct Card* card);
 
 Card* card_init(char mast, Rang rang){
     Card* result = malloc(sizeof(Card));
     result->rang = rang;
     result->mast = mast;
-    result->get_points = get_points;
-    result->show = show;
+    result->get_points = card_get_points;
+    result->show = card_show;
     return result;
 }
 
-int get_points(struct Card* card) {
+int card_get_points(struct Card* card) {
     return card->rang.points;
 }
 
-void show(struct Card* card){
+void card_show(struct Card* card){
     printf("-------\n");
     wprintf(L"%C%C     \n", card->rang.symbol, card->mast);
     printf("       \n");
