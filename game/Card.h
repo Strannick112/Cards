@@ -11,20 +11,10 @@ typedef struct Rang{
     int points;
 } Rang;
 
-const Rang rangs[9] = {
-        {'6', 6},
-        {'7', 7},
-        {'8', 8},
-        {'9', 9},
-        {'X', 10},
-        {'J', 1},
-        {'Q', 2},
-        {'K', 3},
-        {'A', 11}
-        };
+extern const Rang rangs[9];
 
 // В РАЗРАБОТКЕ!!!
-const char masts[4] = {'\x03', '\x04', '\x05', '\x06'};
+extern const char masts[4];
 
 #define Card(a, b) card_init(a, b)
 typedef struct Card{

@@ -7,6 +7,9 @@ int main() {
 //    game.play();
 //    game.show_leaders();
 //    system("chcp 65001");
+//    Card* card = Card(masts[0], rangs[0]);
+//    card->show(card);
+//    printf("Card points: %d\n", card->get_points(card));
 
     system("pause");
     Deck* deck = Deck();
