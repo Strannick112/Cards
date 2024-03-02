@@ -3,6 +3,27 @@
 //
 
 #include "Deck.h"
+//#include "Card.h"
+#include <stdio.h>
+
+Card* get_card(struct Deck* deck);
+void sort(struct Deck* deck);
+
+Deck* deck_init(){
+    Deck* result = malloc(sizeof(Deck));
+    for(int mast_index = 0; mast_index < 4; mast_index++){
+        for(int rang_index = 0; rang_index < 9; rang_index++){
+            result->_deck[mast_index * 9 + rang_index] = Card(
+                    masts[mast_index], rangs[rang_index]
+            );
+        }
+    }
+
+    result->sort = sort;
+    result->get_card = get_card;
+    result->sort(result);
+    return result;
+}
 
 Card* get_card(struct Deck* deck){
     if(deck->_index < 36)

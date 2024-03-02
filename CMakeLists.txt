@@ -3,4 +3,6 @@ project(untitled33 C)
 
 set(CMAKE_C_STANDARD 23)
 
-add_executable(untitled33 main.c)
+add_executable(untitled33 main.c
+        game/Card.c
+        game/Deck.c)
