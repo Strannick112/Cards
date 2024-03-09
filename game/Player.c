@@ -20,12 +20,6 @@ int player_get_points(struct Player* player){
 }
 
 bool player_take(struct Player* player, Card* card){
-//    printf("Player %s, do you wanna take extra card?(y/N)\n", player->name);
-//    char answer;
-//    scanf("%c\n", &answer);
-//    if(answer == 'y'){
-//
-//    }
     return player->hand->take(player->hand, card);
 }
 

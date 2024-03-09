@@ -7,4 +7,6 @@ add_executable(untitled33 main.c
         game/Card.c
         game/Deck.c
         game/Hand.c
-        game/Player.c)
+        game/Player.c
+        game/Game.h
+        game/Game.c)
